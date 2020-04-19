@@ -1,6 +1,6 @@
 import React from 'react'
 import { withRouter } from 'react-router';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom'
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -83,7 +83,7 @@ class ListaPersonasComponent extends React.Component {
                         <div className="row">
                         
                             <div className="col-md-10 mx-auto ">
-                                <ToastContainer />
+                                
                                 <div className="panel panel-default">
                                         <table className="table">
                                             <thead>

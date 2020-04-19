@@ -9,7 +9,7 @@ const data = {
     datasets: [
         {
             label: 'Promedio de Ingresos',
-            backgroundColor: 'rgba(25,92,112,0.2)',
+            backgroundColor: 'rgba(41,211,30,1)',
             borderColor: 'rgba(27,98,150,0.2)',
             borderWidth: 1,
             hoverBackgroundColor: 'rgba(255,99,132,0.4)',

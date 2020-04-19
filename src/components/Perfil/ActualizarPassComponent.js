@@ -33,6 +33,7 @@ class ActualizarPassComponent extends React.Component {
                 .then(res => res.json())
                 .then(data => {
                     if (data == 1) {
+                        this.props.history.push('/');
                         this.mensaje('Password actualizado correctamente');
                     } else {
                         this.mensajeError('Ocurrió un problema al actualizar el password');

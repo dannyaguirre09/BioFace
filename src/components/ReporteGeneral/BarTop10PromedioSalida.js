@@ -9,7 +9,7 @@ const data = {
     datasets: [
         {
             label: 'Promedio de Salidas',
-            backgroundColor: 'rgba(25,92,112,0.2)',
+            backgroundColor: 'rgba(229,24,114,0.5)',
             borderColor: 'rgba(27,98,150,0.2)',
             borderWidth: 1,
             hoverBackgroundColor: 'rgba(255,99,132,0.4)',

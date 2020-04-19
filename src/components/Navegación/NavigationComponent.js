@@ -47,8 +47,8 @@ class NavigationComponent extends React.Component {
                                     <span className="icon-bar"></span>
                                     <span className="icon-bar"></span>
                                 </button>
-                                <a href="#" className="navbar-brand">
-                                    BioFace</a>
+                                <Link to={'/'} className="navbar-brand">
+                                <p style={{fontFamily: 'arial'}, {color: 'white'}}>BioFace</p></Link>
                             </div>
                             <div id="bs-content-row-navbar-collapse-5" className="collapse navbar-collapse">
                                 <ul className="nav navbar-nav navbar-right">
@@ -104,8 +104,8 @@ class NavigationComponent extends React.Component {
                                     <span className="icon-bar"></span>
                                     <span className="icon-bar"></span>
                                 </button>
-                                <a href="#" className="navbar-brand">
-                                    BioFace</a>
+                                <Link to={'/'} className="navbar-brand">
+                                <p style={{fontFamily: 'arial'}, {color: 'white'}}>BioFace</p></Link>
                             </div>
                             <div id="bs-content-row-navbar-collapse-5" className="collapse navbar-collapse">
                                 <ul className="nav navbar-nav navbar-right">

@@ -1,6 +1,6 @@
 import React from 'react'
 import { withRouter } from 'react-router';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 class LoginComponent extends React.Component {
@@ -53,12 +53,10 @@ class LoginComponent extends React.Component {
     }
 
     render() {
-        return (
-            <div className="container mx-auto">
-                <ToastContainer></ToastContainer>
-                <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>
+        return (        
+            <div className="root" style={{background: '#003057'}}>                             
                 <form onSubmit={this.iniciarSesion} className="form-signin" role="form" action="index.html">
-                    <h3 className="form-signin-heading">BiFace</h3>
+                    <h3 className="form-signin-heading"><img src = {process.env.PUBLIC_URL + 'dist/img/LogoBioFaceHorizontal.png'} height="202" width="360" ></img></h3>
                     <div className="form-group">
                         <div className="input-group">
                             <div className="input-group-addon">
@@ -66,7 +64,7 @@ class LoginComponent extends React.Component {
                             </div>
                             <input type="text" className="form-control"
                                 onChange={this.handleChange} required value={this.state.UsernameUsuario}
-                                name="UsernameUsuario" id="username" placeholder="Username" autoComplete="off" />
+                                name="UsernameUsuario" id="username" placeholder="Nombre de Usuario" autoComplete="off" />
                         </div>
                     </div>
 
@@ -77,10 +75,14 @@ class LoginComponent extends React.Component {
                             </div>
                             <input type="password" className="form-control"
                                 onChange={this.handleChange} required value={this.state.PasswordUsuario}
-                                name="PasswordUsuario" id="password" placeholder="Password" autoComplete="off" />
+                                name="PasswordUsuario" id="password" placeholder="Contraseña" autoComplete="off" />
                         </div>
                     </div>
-                    <button className="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                    <button className="btn btn-lg btn-primary btn-block" type="submit">Iniciar Sesión</button>
+                    <br></br>
+                    <br></br><br></br><br></br><br></br><br></br><br></br>
+                    <br></br><br></br><br></br><br></br><br></br>
+                    <br></br><br></br><br></br>
                 </form>
             </div>
         )

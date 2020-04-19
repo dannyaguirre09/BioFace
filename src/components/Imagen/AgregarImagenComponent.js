@@ -1,7 +1,7 @@
 import React from 'react'
 import { withRouter } from 'react-router';
 import * as faceapi from 'face-api.js';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 class CrearImagenComponent extends React.Component {
@@ -168,7 +168,6 @@ class CrearImagenComponent extends React.Component {
                 <div className=" col-sm-10 panel-body">
                     <div className="container">
                         <div className="row">
-                            <ToastContainer></ToastContainer>
                             <div className="col-md-4">
                                 <canvas
                                     width="350" height="300" autoPlay className="js-canvas"></canvas>

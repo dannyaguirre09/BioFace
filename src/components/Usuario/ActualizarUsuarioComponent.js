@@ -51,16 +51,16 @@ class ActualizarUsuarioComponent extends React.Component {
         })
             .then(res => res.json())
             .then(data => {
-                if (data == 1) {
+                if (data == 1) {                    
+                    this.props.history.push('/lista_usuarios');
                     this.mensaje('Usuario actualizado correctamente');
-                    this.props.history.push('/lista_usuarios')
-                } else {
+                } else {                    
+                    this.props.history.push('/lista_usuarios');
                     this.mensajeError('Ocurrió un problema al actualizar el usuario');
-                    this.props.history.push('/lista_usuarios')
                 }
 
             })
-            .catch(err => {
+            .catch(err => {                
                 this.mensajeError('No ha sido posible conectarse a servidor');
             })
     }

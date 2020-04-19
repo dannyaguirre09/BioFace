@@ -41,17 +41,17 @@ class CrearPersonaComponent extends React.Component {
     })
     .then(res => res.json())
     .then(data => {
-      if (data == 1) {
+      if (data == 1) {        
+        this.props.history.push('/lista_personas');
         this.mensaje(1)
-        this.props.history.push('/lista_personas')
-      } else {
-        this.mensaje(2)
-        this.props.history.push('/lista_personas')
+      } else {        
+        this.props.history.push('/lista_personas');
+        this.mensaje(2);
       }
     })
-    .catch(err => {
+    .catch(err => {        
+        this.props.history.push('/lista_personas');
         this.mensaje(3)
-        this.props.history.push('/lista_personas')
     })
 
   }

@@ -26,17 +26,17 @@ class ConfirmacionComponent extends React.Component {
         })
             .then(res => res.json())
             .then(data => {
-                if (data === 1 ){
+                if (data === 1 ){                    
+                    this.props.history.push('/lista_personas');
                     this.mensaje(1);
-                    this.props.history.push('/lista_personas')
-                } else {
+                } else {                    
+                    this.props.history.push('/lista_personas');
                     this.mensaje(2);
-                    this.props.history.push('/lista_personas')
                 }
             })
-            .catch(err => {
+            .catch(err => {                
+                this.props.history.push('/lista_personas');
                 this.mensaje(3);
-                this.props.history.push('/lista_personas')
             })
     }
 
@@ -52,9 +52,9 @@ class ConfirmacionComponent extends React.Component {
                     IdPersona: data.IdPersona
                 })
             })
-            .catch(err => {
+            .catch(err => {                
+                this.props.history.push('/lista_personas');
                 this.mensaje(3);
-                this.props.history.push('/lista_personas')
             })
     }
 
