@@ -44,7 +44,7 @@ class LoginComponent extends React.Component {
                 }
             })
             .catch(err => {
-                this.setState({ mensaje: err.mensaje });
+                this.mensaje('No ha sido posible conectarse al servidor');
             })
     }
 

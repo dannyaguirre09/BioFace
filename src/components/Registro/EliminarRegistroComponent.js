@@ -50,7 +50,6 @@ class EliminarRegistroComponent extends React.Component {
     }
 
     buscarRegistros = async () => {
-        console.log(this.state)
         const modelo = {
             Persona: {
                 IdPersona: this.state.IdPersona
@@ -121,6 +120,35 @@ class EliminarRegistroComponent extends React.Component {
             })
     }
 
+    actualizarRegistro = async (idRegistro, tipoRegistro) => {
+        var esIngreso = 0;
+        if (tipoRegistro === 'Entrada') {
+            esIngreso = 1
+        }
+
+        const uri = 'https://localhost:44393/api/RegistroIngreso?idRegistro='+ idRegistro +'&esIngreso='+ esIngreso+'';
+        console.log(uri);
+        await fetch(uri, {
+            method: 'PUT',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data === 1) {
+                    this.mensaje("Registro actualizado correctamente")
+                    this.buscarRegistros();
+                } else {
+                    this.mensajeError("Ocurrió un problema al actualizar el registro");
+                }
+            })
+            .catch(err => {
+                this.mensajeError("No ha sido posible conectarse con el servidor");
+            })
+    }
+
     mensaje = (mensaje) => {
         toast.info(mensaje);
     }
@@ -178,7 +206,7 @@ class EliminarRegistroComponent extends React.Component {
                                                     <th scope="col">Nombres</th>
                                                     <th scope="col">Fecha | Hora de Registro </th>
                                                     <th scope="col">Tipo de registro</th>
-                                                    <th scope="col">Acciones</th>
+                                                    <th scope="col" className="text-center">Acciones</th>
                                                 </tr>
                                             </thead>
                                             <tbody className="background">
@@ -190,7 +218,14 @@ class EliminarRegistroComponent extends React.Component {
                                                                 <td>{lista.FechaCreacion} | {lista.FechaModificacion}</td>
                                                                 <td>{lista.tipo}</td>
                                                                 <td>
-                                                                    <button onClick={() => this.eliminarRegistro(lista.IdRegistro)} className="btn btn-block" style={{ backgroundColor: '#C3272B' }}>Eliminar</button>
+                                                                    <div className ="row">
+                                                                        <div className="col-md-6">
+                                                                         <button onClick={() => this.eliminarRegistro(lista.IdRegistro)} className="btn btn-block" style={{ backgroundColor: '#C3272B' }}>Eliminar</button>
+                                                                        </div>
+                                                                        <div className ="col-md-6">
+                                                                         <button onClick={() => this.actualizarRegistro(lista.IdRegistro, lista.tipo)} className="btn btn-block" style={{ backgroundColor: '#4B77BE' }}>Cambiar Tipo</button>
+                                                                        </div>
+                                                                    </div>
                                                                 </td>
                                                             </tr>
                                                         )
